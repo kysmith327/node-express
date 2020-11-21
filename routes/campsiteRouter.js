@@ -1,6 +1,8 @@
 const express = require('express');
 const campsiteRouter = express.Router();
 
+campsiteRouter.use(bodyParser.json())
+
 campsiteRouter.route('/')
 .all((req, res, next) => {
     res.statusCode = 200;
@@ -36,7 +38,7 @@ campsiteRouter.route('/:campsiteId')
     res.end('POST operation not supported on /:campsiteId');
 })
 .put((req, res) => {
-    res.statusCode = 200;
+    
     res.end(`Campsite: ${req.body.name} Description: ${req.body.description}`);
 })
 .delete((req, res) => {
