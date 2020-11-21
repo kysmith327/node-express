@@ -38,7 +38,6 @@ campsiteRouter.route('/:campsiteId')
     res.end('POST operation not supported on /:campsiteId');
 })
 .put((req, res) => {
-    
     res.end(`Campsite: ${req.body.name} Description: ${req.body.description}`);
 })
 .delete((req, res) => {
